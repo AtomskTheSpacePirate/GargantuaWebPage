@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GARGANTUA</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --bg-soft: #1f2024;
+      --text: #e6e8ee;
+      --muted: #a0a4b8;
+      --accent: #69141b;
+      --accent-soft: rgba(83, 89, 136, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 5rem 8vw;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+
+    /* ---------- HEADER ---------- */
+    .hero {
+      position: relative;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("images/library_hero.png") center / cover no-repeat;
+      filter: blur(6px) brightness(0.85);
+      transform: scale(1.1);
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .hero-logo {
+      width: min(840px, 80vw); /* responsive */
+      height: auto;
+      margin-bottom: 0.75rem;
+      border-radius: 0; /* prevent rounding */
+    }
+
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .wishlist-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: none;
+      text-decoration: none;
+    }
+
+    .wishlist-btn img {
+      display: block;
+      height: 160px;
+      width: auto;
+      border-radius: 999px;
+    }
+
+    .wishlist-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--accent-soft);
+    }
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+
+
+    /* ---------- SOCIALS ---------- */
+    .socials {
+    text-align: center;
+    padding: 4rem 8vw 2rem;
+    }
+
+
+    .socials h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--muted);
+    font-weight: 2500;
+    }
+
+
+    .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.8rem;
+    }
+
+    .social-icons img {
+    border-radius: 0;
+    width: 54px;
+    height: 54px;
+    opacity: 0.85;
+    }
+
+    .social-icons a {
+    color: var(--text);
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+
+    .social-icons a:hover {
+    transform: translateY(-2px);
+    opacity: 0.75;
+    }
+
+    /* ---------- INFO SECTIONS ---------- */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      background: var(--bg-soft);
+      border-radius: 32px;
+      padding: 4rem;
+    }
+
+    .split.reverse {
+      direction: rtl;
+    }
+
+    .split.reverse > * {
+      direction: ltr;
+    }
+
+    .text-box h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .text-box p {
+      color: var(--muted);
+      max-width: 80ch;
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact {
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact a {
+      color: var(--accent);
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .split {
+        grid-template-columns: 1fr;
+        padding: 3rem 2rem;
+      }
+
+      section {
+        padding: 4rem 6vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="visually-hidden">Gargantua</h1>
+      <img
+        src="images/library_logo_transparent.png"
+        alt="Gargantua"
+        class="hero-logo"
+        />
+      <a href="https://store.steampowered.com/app/YOUR_APP_ID" class="wishlist-btn image-btn">
+        <img src="icons/SteamPadding.png" alt="Add to Wishlist" />
+      </a>
+    </div>
+  </header>
+
+  <!-- SOCIALS -->
+  <section class="socials">
+    <h2>Follow Us</h2>
+    <div class="social-icons">
+      <a href="https://instagram.com/yourpage">
+        <img src="icons/Instagram_icon.png" alt="Instagram">
+      </a>
+      <a href="https://instagram.com/yourpage">
+        <img src="icons/X_icon.svg.png" alt="Twitter">
+      </a>
+    </div>
+  </section>
+
+  <!-- 2. INFO SECTION -->
+  <section>
+    <div class="split">
+      <img src="images/Screenshot 2025-12-30 071057.png" alt="Game screenshot" />
+      <div class="text-box">
+        <h2>An Interstellar City</h2>
+        <p>
+          Gargantua is an interstellar trade ship provided to you by the government to build on, produce and trade with. You will create intricate production chains, manage the population
+          and workforce, build defences and travel to different planets to trade. 
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. INFO SECTION (REVERSED) -->
+  <section>
+    <div class="split reverse">
+      <img src="images/Screenshot 2025-12-30 070702.png" alt="Game screenshot" />
+      <div class="text-box">
+        <h2>War Is Logistics</h2>
+        <p>
+          In Gargantua, every bullet you shot had to be produced or bought. You have to find most cost efficent ways to defend your ship while keeping your industries running.
+          Different planets have different native resources, products and different needs, so you have to decide best route take to make money and supply your industries.
+        </p>
+      </div>
+    </div>
+  </section>
+
+    <!-- 4. INFO SECTION -->
+  <section>
+    <div class="split">
+      <img src="images/Screenshot 2025-12-30 070649.png" alt="Game screenshot" />
+      <div class="text-box">
+        <h2>Choices, Choices, Choices...</h2>
+        <p>
+          Everytime you gain a new contracter level, government will reward you. Choose wisely because choices will have permanent effect on your production chain, combat abilites and
+          resource management capabilities. You can specilize or be a generalist, whatever fits your strategy best. 
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CONTACT -->
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>
+      <a href="mailto:contact@yourgame.com">contact@yourgame.com</a>
+    </p>
+  </section>
+
+</body>
+
+<footer style="text-align:center; padding:2rem; color:#777; font-size:0.85rem;">
+  © 2025 Abdullah Furkan Doğan
+</footer>
+
+</html>
